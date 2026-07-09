@@ -1,0 +1,208 @@
+from flask import Flask, render_template, request, flash
+app = Flask(__name__)
+app.secret_key = "abc123"  
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email=request.form.get('email')
+        password=request.form.get('password')
+        if not name or not email or not password  or name.strip()== "" or email.strip()=="" or password.strip()=="":
+               
+            flash("Registration fail, Try Again 😔")
+        else:
+            flash(f"Registration Start, Welcome {name} 😊") 
+
+    return render_template('home.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+body{
+    background-color:#00663A;
+}
+
+input{
+    width: 100;
+    padding: 12px;
+    margin: 10px 0;
+    font: size 16px;
+    border-color:darkcyan;
+}
+button{
+    color:hsla(0, 100%, 30%, 0.805);
+    text-align: center;
+    hover {background: #0056b3;}
+}
+try{
+    background-color: whitesmoke;
+    color: darkred;
+    width:100;
+    padding:12px;
+}
+.success{ 
+    background-color: whitesmoke;
+    color:lightgreen;
+    width:100;
+    padding:12px;
+}
+.footer{
+    background-color: white;
+    background-image:url("https://thumbs.dreamstime.com/b/modern-abstract-texture-background-triangle-hexagonal-shapes-geometric-pattern-poster-header-web-banner-footer-414801918.jpg?w=992");
+    background-size:cover;
+    margin-bottom:0;
+}
+img{
+    background-size:500px;
+}
+p{
+    text-align: center;
+    color: black;
+}
+
+h2{
+    text-align: right;
+    text-decoration:underline ;
+    padding-bottom: 0;
+    color: aqua;
+}
+Contact{
+    text-align: right;
+    text-decoration:underline ;
+    padding-bottom: 0;
+    color: aqua;
+}
+about{
+    text-align: right;
+    text-decoration:underline ;
+    padding-bottom: 0;
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    
+
+    
+ <top class="top" style="color:black;margin-top:50px; width: 40px;;">
+        <marquee behavior="scroll" direction="left">REGISTRATION FORM </marquee>
+
+    <h1 style="text-align: center;">NAME VALIDATION</h1>
+
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <h3 class="Flash" style="color:rgb(16, 1, 45); text-align:center;">{{ msg }}</h3>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" style="text-align:center;">
+        <input type="text" name="name" placeholder="Enter your name"><br><br>
+        <input type="text" name="email" placeholder="Enter your email id"><br><br>
+        <input type="password" name="password" placeholder="Enter your password"><br></br>
+         <button type="submit"> submit</button> <br></br>
+
+    </form>
+      
+    <footer class="footer" style="background:#1a1a1a; color:white; padding:20px; margin-top:50px;">
+        <marquee behavior="scroll" direction="left">Thank you for visiting</marquee>
+        <div style="display:flex; justify-content:space-around;">
+            <div>
+                <p><b>Open Source</b></p>
+                <p>Download</p>
+                <p>Github</p>
+                <p>Share</p>
+                <p>Chrome</p>
+
+            </div>
+            <div>
+                <p><b>Services</b></p>
+                <p>Support</p>
+                <p>Education</p>
+                <p>Traning</p>
+                <p>practice</p>
+            </div>
+            <div>
+                <p><b>About Us</b></p>
+                <p>Contact us</p>
+                <p>Jobs</p>
+                <p>Help</p>
+                <p>Logic</p>
+
+            </div>
+        </div>
+        
+        <div style="text-align:center; margin-top:20px;">
+            
+            <a href="https://wa.me/919876543210" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+                     alt="WhatsApp" 
+                     style="width:40px; margin:10px;">
+
+            </a>
+        321`
+            <c>
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968891.png" alt="Snapchat" style="width:40px;">
+            </c>
+            
+            <d>
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Twitter" style="width:40px;">
+            </d>
+
+             <e> 
+                 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="X" style="width:40px;">
+             </e>
+             
+             <f>
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="width:40px;">
+             </f>
+
+
+            <h2 style="color: 183655;">NIRAJ DEORE<h2>
+              <h3 style="color: 545E75;">Contact-1234567890</h3>
+                <h4 style="color: C40234;">about</h4>
+            
+            
+        </div>
+    </footer>
+
+</body>
+</html>
