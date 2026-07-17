@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <head>
+<body>
+    <h1>STUDENT CRUD </h1>
+<form action="/add" method="POST">
+<input type="id" name="id" placeholder="Enter id">
+<input type="text" name="name" placeholder="Enter nane">
+<input type="email" name="email" placeholder="Enter email">
+<input type="contact" name="contact" placeholder="Enter contact NO">
+<input tuype="course" name="course" placeholder="Enter course">
+
+<button type="submit" class="button=addstudent">Add Student</button>
+</form>
+<br><br>
+<table>
+    <tr>
+        <th> ID </th>
+        <th> NAME</th>
+        <th> EMAIL</th>
+        <th>CONTACT</th>
+        <th> COURSE</th>
+        <th>ACTION</th>
+    </tr>
+    {% for student in students %}
+<tr>
+    <td>{{student.id}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.email}}</td>
+    <td>{{student.contact}}</td>
+    <td>{{student.course}}</td>
+    <td>
+        <a href="/edit/{{student.id}}"><button>Edit</a>                    
+        <a href="/delete/{{student.id}}"><button>Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html> 

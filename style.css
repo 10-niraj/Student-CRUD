@@ -1,0 +1,82 @@
+body{
+    background: linear-gradient(135deg);
+    background-color: aqua;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align:center;
+}
+
+h1{
+    color:black solid;
+    font-size:32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+h2{
+    color:rgb(0, 45, 244) solid;
+    font-size:32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+form{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.input{
+       padding: 20px 12px;
+       border: 2px solid;
+       border-radius: 4px;
+       width: 150px;
+       outline-color: rgb(32, 241, 206);
+}
+
+.button-addstudent{
+    padding:8px 15px;
+    background: rgb(34, 208, 34);
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-weight: bold;
+}
+
+.button-edit{
+    padding: 8px 15px;
+    background-color: rgb(255, 255, 125);
+    color:black;
+}
+
+.button-delete{
+    padding: 8px 15px;
+    background-color: red;
+    color:white;
+}
+
+table{
+    width: 90px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color:#5561C2;
+}
+
+th{
+    background-color: #489999;
+    color:white;
+    padding: 12px;
+    border: 2px solid; 
+    font: size 16px;
+}
+
+td{
+    padding: 10px;
+    border: 2px solid;
+    text-align: center;
+    font-size:15px;
+}
